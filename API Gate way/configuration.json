@@ -1,0 +1,32 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/assets",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44368
+        }
+      ],
+      "UpstreamPathTemplate": "/assets",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/documents",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44382
+        }
+      ],
+      "UpstreamPathTemplate": "/documents",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:44361"
+  }
+
+}  
