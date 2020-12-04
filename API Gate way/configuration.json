@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/assets",
+      "DownstreamPathTemplate": "/api/assets/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -9,11 +9,11 @@
           "Port": 44368
         }
       ],
-      "UpstreamPathTemplate": "/assets",
+      "UpstreamPathTemplate": "/assets/{everything}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
-      "DownstreamPathTemplate": "/api/documents",
+      "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -21,9 +21,33 @@
           "Port": 44382
         }
       ],
-      "UpstreamPathTemplate": "/documents",
+      "UpstreamPathTemplate": "/documents/{everything}",
       "UpstreamHttpMethod": [ "GET" ]
     },
+    {
+      "DownstreamPathTemplate": "/api/token/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44336
+        }
+      ],
+      "UpstreamPathTemplate": "/token/{everything}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/reportbuilder/metadata/{reportType}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44303
+        }
+      ],
+      "UpstreamPathTemplate": "/reportbuilder/metadata/{reportType}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:44361"

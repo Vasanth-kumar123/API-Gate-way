@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace API_Gate_way
+namespace IdentityServer
 {
     public class Program
     {
@@ -21,13 +21,6 @@ namespace API_Gate_way
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
-              .ConfigureAppConfiguration((hostingContext, config) =>
-              {
-                  config
-                  .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                  .AddJsonFile("configuration.json", optional: false, reloadOnChange: true);
-              })
-            .ConfigureLogging(log => log.AddConsole());
+                });
     }
 }

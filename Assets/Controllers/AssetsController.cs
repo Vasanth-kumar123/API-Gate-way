@@ -12,11 +12,19 @@ namespace Assets.Controllers
     public class AssetsController : ControllerBase
     {
         [HttpGet]
+        [Route("excute")]
         public async Task<IActionResult> GetAll()
         {
             //var customers = await _context.Products.ToListAsync();
             //if (customers == null) return NotFound();
             return Ok("Assets Microservice executed !");
+        }
+
+        [HttpGet]
+        [Route("names")]
+        public List<string> GetAssetNames()
+        {
+            return new List<string> { "Laptop", "Mobile" };
         }
     }
 }
